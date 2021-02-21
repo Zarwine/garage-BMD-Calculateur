@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="calculateur">
+        <div id="calc_infos">
+            <p>Prix moyen ethanol <span id="calc_ethanol">0.67</span>€ / L</p>
+            <p>Prix moyen SP98 <span id="calc_SP98">1.58</span>€ / L</p>
+        </div>
+        <hr>
+        <form id="calc_form" action="calculateurBMD.calcul()" method="post">
+            <div class="calc_field">
+                <label for="conso">Consommation moyenne: </label>
+                <input type="number" name="conso" id="conso" required> L/100km
+            </div>
+            <div class="calc_field">
+              <label for="km">Kilométrage annuel: </label>
+              <input type="number" name="km" id="km" required> km
+            </div>  
+            <input type="submit" value="Calculer" id="calc_form_submit">
+        </form>
+        <div id="calc_results">
+            <p>Carburant consommé par an <span id="calc_result_conso_year"></span>L</p>
+            <p>Coût en SP98 par an <span id="calc_result_SP98"></span>€</p>
+            <p>Coût en éthanol par an <span id="calc_result_ethanol"></span>€</p>
+            <p>Economie sur 1 an <span id="calc_result_economie"></span>€</p>
+        </div>
+    </div>
+    <script src="Calculateur.js"></script>
+</body>
+</html>
