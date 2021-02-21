@@ -14,15 +14,15 @@ class CalculateurBMD {
         let consoMoyenne = parseFloat(document.getElementById(this.conso).value)
         let km = parseFloat(document.getElementById(this.km).value)
         if(km > 0 & consoMoyenne > 0) {
-            let consoPerYear = Math.round(km / consoMoyenne)
-            let SP98PerYear = Math.round(consoPerYear * this.SP98Price)
-            let ethanolPerYear = Math.round(consoPerYear * this.ethanolPrice)
-            let economiePerYear = Math.round(SP98PerYear - ethanolPerYear)
+            let consoPerYear = (km * consoMoyenne )/100
+            let SP98PerYear = (consoPerYear * this.SP98Price)
+            let ethanolPerYear = (consoPerYear * this.ethanolPrice)
+            let economiePerYear = (SP98PerYear - ethanolPerYear)
 
-            document.getElementById("calc_result_conso_year").innerHTML = consoPerYear
-            document.getElementById("calc_result_SP98").innerHTML = SP98PerYear
-            document.getElementById("calc_result_ethanol").innerHTML = ethanolPerYear
-            document.getElementById("calc_result_economie").innerHTML = economiePerYear
+            document.getElementById("calc_result_conso_year").innerHTML = consoPerYear.toFixed(2)
+            document.getElementById("calc_result_SP98").innerHTML = SP98PerYear.toFixed(2)
+            document.getElementById("calc_result_ethanol").innerHTML = ethanolPerYear.toFixed(2)
+            document.getElementById("calc_result_economie").innerHTML = economiePerYear.toFixed(2)
         }
     }
 }
